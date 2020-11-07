@@ -1,0 +1,46 @@
+.bg-light-primary {
+  background-color: #4582ec15;
+}
+
+.bg-light-success {
+  background-color: #02b87515;
+}
+
+.bg-light-info {
+  background-color: #17a2b815;
+}
+
+.bg-light-warning {
+  background-color: #f0ad4e15;
+}
+
+.bg-light-danger {
+  background-color: #d9534f1;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=variables.css.map */
