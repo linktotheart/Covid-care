@@ -6,13 +6,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  // border: 1px solid red;
 }
 
 /////////////// general styling /////////////
 
 body {
   font-family: "Montserrat", sans-serif !important;
-  background: #f7f7f7;
+  background: #fafaff;
   .t-primary {
     color: $blue;
   }
@@ -24,6 +25,10 @@ body {
   .btn-primary {
     background-color: $blue;
     border-color: $blue;
+    &:hover{
+      background-color: darken($blue,  10);
+      border-color:darken($blue,  10);
+    }
   }
   .btn,
   button.btn,
@@ -340,6 +345,12 @@ header {
         margin-right: 2rem;
         display: inline-flex;
         align-items: center;
+        &:last-child{
+          margin-right: 0;
+        }
+        @include mediaq($xl){
+          margin-right: 1rem;
+        }
         &.dropper {
           position: static;
           .dropdown-wide {
@@ -370,6 +381,7 @@ header {
                 padding-bottom: 0;
                 .container{
                   padding: 0;
+                  .row{width: 100%;}
                   .row-cols-1{ padding-left: 0;}
                   .col-12,
                   .col{
@@ -397,8 +409,8 @@ header {
                 position: relative;
                 min-width: 270px;
                 z-index: 9;
-                @include mediaq($lg){
-                  min-width: auto;
+                @include mediaq($xl){
+                  min-width: 190px;
                 }
                 .nav-item {
                   display: block;
@@ -497,6 +509,7 @@ header {
 /////////////// slider //////////////////
 .hero-slider{
     position: relative;
+    max-height: 280px; // firefox fix
     .item{
         width: 100%;
         min-height: 280px;
@@ -577,6 +590,7 @@ header {
     box-shadow: 0 4px 12px #0001;
     @include mediaq($lg) {
       margin-bottom: 1rem;
+      height: calc(100% - 1rem);
     }
     .header {
       font-weight: 700;
@@ -605,13 +619,13 @@ header {
     }
   }
   @include mediaq($sm) {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 }
 
 //////////// category box ////////// 
 .category-box{
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   .card-title{
       font-weight: 600;
       color: $black;
@@ -659,7 +673,7 @@ header {
 
 ///// section category
 .category-section{
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   @include mediaq($md){
     padding: 0;
   }
@@ -672,12 +686,14 @@ header {
     padding-bottom: 2rem;
     @include mediaq($md) {
       padding-top: 1rem;
+      padding-bottom: 1rem;
+
     }
   }
   .section-categories{
     // border-right-width: 1px;
     // border-right-color: #e9e9e9;
-    height: 100%;
+    height: auto;
     text-align: left;
     background: #fff;
     border-right: 1px solid #e7e7e7;
@@ -702,11 +718,16 @@ header {
         font-weight: 500;margin: 0.5rem;}
     }
     .sub-categories{
+      height: 100%;
       margin: 0;
       list-style: none;
       padding: 1em 0;
+      @include mediaq($sm){
+        display: none;
+      }
       li{
-        padding: 0.4em 0.5rem;
+        padding: 0.4rem 0.5rem;
+               
         a{
           text-decoration: none;
           transition: all .25s ease;
@@ -715,6 +736,10 @@ header {
           color: #333;
           &:hover{
             color: $blue;
+          }
+          @include mediaq($sm){
+            font-size: 12px;
+            //// small font for small device //
           }
         }
       }
@@ -727,6 +752,9 @@ header {
       padding-right: 0;
       margin-bottom: 4px;
       position: relative;
+      @include mediaq($sm){
+        margin-bottom: 0;
+      }
       .product-card {
         transition: 0.3s ease;
         border: 1px solid #fff;
@@ -735,11 +763,14 @@ header {
           border: 1px solid #e7e7e7;
           z-index: 5;
           .product-image img {
-            transform: scale(1.05);
+            transform: scale(1.01);
           }
         }
         .card-body {
-          padding: 1rem;
+          padding: 0.5rem;
+          .card-title {
+            margin-bottom: 0.25rem;
+            }
           .card-title a {
             font-weight: 500;
             font-size: 13px;
@@ -766,12 +797,17 @@ header {
                 font-size: 110%;
               }
             }
+            .btn.btn-primary{
+              @include mediaq($md){
+                width: 100%;
+              }
+            }
           }
           @include mediaq($md) {
-            padding: 0.75rem;
+            padding: .5rem 0.5rem;
           }
           @include mediaq($sm) {
-            padding: 0.5rem;
+            padding: 0.25rem;
           }
         }
         .product-tag {
@@ -789,31 +825,33 @@ header {
         .product-image {
           position: relative;
           width: 100%;
-          min-height: 225px;
+          // min-height: 250px;
+          min-height: min-content;
           overflow: hidden;
           img {
-            top: -1rem;
-            left: 0;
-            bottom: 0;
+            // top: 2px;
+            // left: 2px;
+            // right: 2px;
+            // position: absolute;
             max-width: 100%;
-            position: absolute;
             transition: 0.3s ease;
             @include mediaq($md){
               top: 0rem;
             }
           }
           @include mediaq($lg) {
-            min-height: 225px;
+            // min-height: 225px;
+            min-height: max-content;
           }
           @include mediaq($md) {
-            min-height: 175px;
+            min-height: 165px;
           }
           @include mediaq($sm) {
-            min-height: 140px;
+            min-height: 155px;
           }
         }
         @include mediaq($sm) {
-          margin: 5px;
+          margin: 8px;
         }
       }
     }
@@ -854,10 +892,10 @@ header {
     justify-content: space-between;
     padding: 1rem;
     transition: 0.25s ease;
-    border-radius: 1rem;
+    border-radius: .25rem;
     &:hover{
-      background: #f9f9ff;
-      box-shadow: 0 2px 5px #0002;
+      background: #fefeff;
+      box-shadow: 0 4px 16px #0001;
     }
     .info-card-icon{
       @include center;
@@ -991,7 +1029,7 @@ section.featured {
     .nav-item {
       .nav-link {
         border-color: #fff #fff #dedede;
-        padding: 0.5rem 2.5rem;
+        padding: 0.5rem 2rem;
         font-weight: 600;
         font-size: 18px;
         line-height: 32px;
@@ -1083,9 +1121,12 @@ section.featured {
     @include mediaq($md) {
       margin: 8px;
     }
+    @include mediaq($sm) {
+      margin: 4px;
+    }
     .product-img {
       position: relative;
-      min-height: 180px;
+      min-height: 190px;
       overflow: hidden;
       @include mediaq($xl) {
         min-height: 220px;
@@ -1097,7 +1138,7 @@ section.featured {
         min-height: 145px;
       }
       @include mediaq($sm) {
-        min-height: 125px;
+        min-height: 140px;
       }
 
       img {
@@ -1122,7 +1163,10 @@ section.featured {
       }
     }
     .product-body {
-      padding: 0.5rem;
+      padding: 0.25rem;
+      @include mediaq($sm){
+        padding: 0 0.25rem;
+      }
       h5 {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -1138,13 +1182,11 @@ section.featured {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 0.5rem;
         .price {
           color: #737373;
           font-weight: 500;
           font-size: 16px;
           text-align: center;
-          letter-spacing: 0.2px;
         }
       }
     }
@@ -1154,7 +1196,7 @@ section.featured {
 
 ////////// shop by category //////////////////
 .category-shop {
-  margin-top: 50px;
+  margin-top: 2rem;
   .card {
     border: 0;
     margin-bottom: 1rem;
@@ -1191,6 +1233,9 @@ section.featured {
 /////// covid 19 /.  / // / / / 
 .covid-19{
   margin-top: 2rem;
+  @include mediaq($sm){
+    margin: 2rem auto;
+  }
   .header{
     vertical-align: middle;
     padding: 2rem 1rem;
@@ -1228,10 +1273,9 @@ section.featured {
   }
 }
 
-.other-info
-{
+.other-info{
   margin-top: 2rem;
-  font-size: 15px;
+  font-size: 14px;
   h6{
     font-weight:700;
     letter-spacing: 0.5px;
@@ -1271,7 +1315,7 @@ section.featured {
 .footer {
   padding: 3rem 0 0;
   background: #0e2e41;
-  margin-top: 5rem;
+  margin-top: 2rem;
   .footer-menu {
     .logo {
       margin-bottom: 2rem;

@@ -1,7 +1,8 @@
 /////////// colors ////////// 
 
 $primary: #4582ec;
-$blue: #007bff;
+$blue: #04a4b9;
+
 $grey: #F6F6F6;
 $black: #0F2B3F;
 $light-grey: lighten($black, 40);
@@ -15,7 +16,7 @@ $light-grey: lighten($black, 40);
 .bg-light-warning {
   background-color: #f0ad4e15; }
 .bg-light-danger {
-  background-color: #d9534f1; }
+  background-color: #d9534f15; }
 /////////// device width and screensize ////////////////
   // Extra small screen / phone
   $xs: 0;
