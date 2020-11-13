@@ -18,8 +18,6 @@ $light-grey: lighten($black, 40);
 .bg-light-danger {
   background-color: #d9534f15; }
 /////////// device width and screensize ////////////////
-  // Extra small screen / phone
-  $xs: 0;
   // Small screen / phone
   $sm: 576px;
   // Medium screen / tablet

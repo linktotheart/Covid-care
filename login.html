@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - Precult - Title Home page</title>
+    <!--bootstrap css -->
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <!--owl carousel -->
+    <link rel="stylesheet" href="style/owl.carousel.min.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!--stylesheets-->
+    <link rel="stylesheet" href="style/main.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- main content here  -->
+    <main>
+        <section class="login">
+            <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-md-8 col-lg-6 col-xl-5 col-sm-11">
+                     <div class="logo-container mb-4 d-flex justify-content-center">
+                        <picture>
+                            <img src="./assets/img/logo.png" class="img-fluid" alt="">
+                        </picture>
+                     </div>
+                        <div id="logreg-forms">
+                            <form class="form-signin">
+                                <h1 class="h3 mb-3 font-weight-normal text-center">
+                                    Sign in
+                                </h1>
+                                <div class="social-login">
+                                    <button class="btn facebook-btn social-btn mr-2 " type="button">
+                                        <i class="fa fa-facebook"></i>
+                                        <span> Sign in with Facebook</span>
+                                    </button>
+                                    <button class="btn google-btn social-btn" type="button">
+                                        <i class="fa fa-google"></i>
+                                        <span> Sign in with Google+</span>
+                                    </button>
+                                </div>
+                                <p class="text-center"> OR </p>
+                                
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                                <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required="">
+                                
+                                <button class="btn btn-success btn-block" type="submit">
+                                    <i class="fa fa-sign-in-alt"></i> Sign in</button>
+                                <a href="#" id="forgot_pswd">Forgot password?</a>
+                                <hr>
+                                <p class="small text-center mb-2">Don't have an account!</p> 
+                                <button class="btn btn-primary btn-block" type="button" id="btn-signup">
+                                    <i class="fa fa-user-plus"></i> Sign up here
+                                </button>
+
+                            </form>
+                    
+                            <!-- Reset Password  -->
+                            <form action="/reset/password/" class="form-reset">
+                                <h2 class="h3 mb-3 font-weight-normal text-center">
+                                   Reset Password
+                                </h2>
+                                <input type="email" id="resetEmail" class="form-control mb-3" placeholder="Email address" required="" autofocus="">
+                                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                                <a href="#" id="cancel_reset"><i class="fa fa-angle-left"></i> Back</a>
+                            </form>
+                                
+                            <!-- Sign up form  -->
+                            <form action="/signup/" class="form-signup">
+                                <h2 class="h3 mb-3 font-weight-normal text-center">
+                                    Sign Up
+                                 </h2>
+                                <div class="social-login mb-4">
+                                    <button class="btn facebook-btn social-btn mr-2" type="button">
+                                        <i class="fa fa-facebook"></i>
+
+                                        <span>
+                                            Sign up with Facebook
+                                        </span> 
+                                    </button>
+
+                                    <button class="btn google-btn social-btn" type="button">
+                                        <i class="fa fa-google"></i>
+                                        <span>
+                                            Sign up with Google+
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <p class="text-center"> OR </p>
+                    
+                                <input type="text" id="user-name" class="form-control mb-2" placeholder="Full name" required="" autofocus="">
+                                <input type="email" id="user-email" class="form-control mb-2" placeholder="Email address" required autofocus="">
+                                <input type="password" id="user-pass" class="form-control mb-2" placeholder="Password" required autofocus="">
+                                <input type="password" id="user-repeatpass" class="form-control mb-2" placeholder="Repeat Password" required autofocus="">
+                
+                                <button class="btn btn-primary btn-block mb-2" type="submit"><i class="fa fa-user-plus"></i> Sign Up</button>
+                                <a href="#" id="cancel_signup"><i class="fa fa-angle-left"></i>Back</a>
+                            </form>
+
+                            <br>
+                                
+                        </div>
+                  </div>
+              </div>
+            </div>
+        </section>
+    </main>
+
+<!-- main ends here -->
+
+<!-- body ends here -->
+
+
+// <!---- scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/precult.js"></script>
+</body>
+
+</html>
